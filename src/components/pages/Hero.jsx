@@ -2,14 +2,19 @@ import React from 'react';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
 
 export const Hero = ({ t, setPage, lang }) => (
-  <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-[#FAFAFA]">
-    {/* Clean Background */}
-    <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-50 via-transparent to-transparent opacity-70"></div>
+  <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+    {/* Background Image */}
+    <div 
+      className="absolute inset-0 bg-cover bg-center"
+      style={{ backgroundImage: 'url(/BackroundPicture.png)' }}
+    ></div>
+    {/* Overlay for readability */}
+    <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/90 to-[#FAFAFA]/95"></div>
     
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div className="max-w-4xl mx-auto text-center">
-        <div className="inline-block mb-6 px-4 py-2 rounded-none border border-blue-100 bg-white text-[#817DFF] font-mono text-sm shadow-sm tracking-wide">
-          🚀 {lang === 'he' ? 'חדשנות עסקית מוכחת' : 'Proven Business Innovation'}
+        <div className="inline-block mb-6 px-4 py-1.5 rounded-full bg-[#F0F0FF] text-[#817DFF] font-bold text-xs font-mono uppercase tracking-wide">
+          {lang === 'he' ? 'חדשנות עסקית מוכחת' : 'Proven Business Innovation'}
         </div>
         <h1 className="text-4xl md:text-6xl font-black text-[#172736] mb-8 leading-tight tracking-tight font-display">
           {t.hero.title}
