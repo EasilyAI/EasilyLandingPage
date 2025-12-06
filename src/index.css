@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Heebo: closest free Google Font to 'Tel Aviv Modernist' */
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap');
+
+/* Space Mono: closest free Google Font to 'Cascadia Mono' */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* Noto Sans Hebrew: requested Body font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;700&display=swap');
+
+/* Montserrat: requested English font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap');
+
+/* Typography Mappings */
+.font-hebrew .font-display { 
+  font-family: 'Heebo', sans-serif; 
+}
+
+.font-hebrew .font-mono { 
+  font-family: 'Space Mono', monospace; 
+}
+
+.font-hebrew { 
+  font-family: 'Noto Sans Hebrew', sans-serif; 
+}
+
+.font-english .font-display { 
+  font-family: 'Montserrat', sans-serif; 
+}
+
+.font-english .font-mono { 
+  font-family: 'Space Mono', monospace; 
+}
+
+.font-english { 
+  font-family: 'Montserrat', sans-serif; 
+}
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+::-webkit-scrollbar { 
+  width: 8px; 
+}
+
+::-webkit-scrollbar-track { 
+  background: #FAFAFA; 
+}
+
+::-webkit-scrollbar-thumb { 
+  background: #cbd5e1; 
+  border-radius: 4px; 
+}
+
+::-webkit-scrollbar-thumb:hover { 
+  background: #817DFF; 
+}
+
+@keyframes fade-in {
+  from { 
+    opacity: 0; 
+    transform: translateY(10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
