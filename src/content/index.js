@@ -10,15 +10,68 @@ export const content = {
     nav: {
       home: "דף הבית",
       services: "שירותים",
+      ai_tools: "כלי AI לעסקים",
       blog: "בלוג",
       about: "אודות",
       contact: "צור קשר",
       cta: "פגישת אפיון חינם",
       back: "חזרה"
     },
+    ai_tools: {
+      title: "כלי AI שכל בעל עסק צריך להכיר",
+      subtitle: "חסכו זמן וכסף עם פתרונות AI מוכנים: סיכומי פגישות, בניית מצגות, חיפוש ידע פנימי, אוטומציות ועוד.",
+      tagline: "ארגז כלים חכם לבעלי עסקים",
+      pros_label: "יתרונות",
+      cons_label: "חסרונות",
+      tip_label: "טיפ",
+      visit_label: "לאתר הכלי",
+      try_label: "תנסו",
+      help_text: "צריכים עזרה בבחירה או חיבור של הכלי לתהליכים שלכם?",
+      cta_button: "דברו איתנו",
+      items: [
+        {
+          id: "notta",
+          icon: "notes",
+          name: "Notta.ai",
+          category: "סיכום פגישות אוטומטי - תמלול וסיכום",
+          description: "מצטרף לפגישה, מתמלל ומסכם אוטומטית, זיהוי דוברים, תמיכה מלאה בעברית",
+          pros: [],
+          cons: [],
+          price: "קיים מסלול חינמי, 8$ לחודש. \n 10% הנחה דרך הקישור",
+          tip: "בנו תבנית NEXT STEPS קבועה ושלחו סיכום אוטומטי למשתתפים. הקישור מעניק 10% הנחה.",
+          link: "https://notta.cello.so/tkZ7HrLLQO2"
+        },
+        {
+          id: "genspark",
+          icon: "presentation",
+          name: "GenSpark AI",
+          category: "הכנת מצגות",
+          description: "מייצר מצגות מהסבר קצר, אינטגרציה עם גוגל, חיפוש תוכן באינטרנט",
+          pros: [],
+          cons: [],
+          price: "תוכניות החל מכ-19.99$ לחודש (לפי האתר/מבצע)",
+          tip: "תנו 5–7 נקודות מפתח וקישורי מקורות כדי לצמצם הזיות.",
+          link: "https://www.genspark.ai/"
+        },
+        {
+          id: "base44",
+          icon: "internal",
+          name: "Base44",
+          category: "אפליקציות פנימיות",
+          description: "בונים אפליקציות ואוטומציות פנימיות בדקות עם AI, כולל הרשאות וחיבורי Slack/Monday.",
+          pros: [],
+          cons: [],
+          price: "תוכנית בסיס מכ-10$ למשתמש לחודש; Enterprise מותאם",
+          tip: "בחרו תהליך יומי אחד (אישורי רכש/דוחות) וחברו קודם לסלאק.",
+          link: "https://base44.com/"
+        }
+      ]
+    },
     hero: {
+      tagline: "AI שמדבר תוצאות",
       title: "מפשטים את הבינה המלאכותית לעסק שלכם",
-      subtitle: "הפסיקו לבזבז זמן על תהליכים ידניים. אנו עוזרים לעסקים להטמיע פתרונות AI שמגדילים רווחיות, חוסכים שעות עבודה יקרות ומייצרים יתרון תחרותי אמיתי.",
+      subtitle: "נבנה יחד אוטומציות, סוכנים ותהליכי AI שמייצרים ROI מדיד.",
+      short_description: "יישום AI מקצה לקצה: מיפוי תהליכים, בנייה, חיבור למערכות ומדידה – בעברית ובאנגלית.",
       cta_primary: "הירשמו לפגישת אפיון AI בחינם",
       cta_secondary: "גלה איך אנחנו עוזרים"
     },
@@ -231,15 +284,68 @@ export const content = {
     nav: {
       home: "Home",
       services: "Services",
+      ai_tools: "AI Tools",
       blog: "Blog",
       about: "About",
       contact: "Contact",
       cta: "Free Consultation",
       back: "Back"
     },
+    ai_tools: {
+      title: "AI tools every business owner should know",
+      subtitle: "Save money and time with ready-made AI: meeting notes, deck builders, internal apps, chat, and analytics.",
+      tagline: "Smart toolbox for lean teams",
+      pros_label: "Pros",
+      cons_label: "Cons",
+      tip_label: "Tip",
+      visit_label: "Visit tool",
+      try_label: "Try it",
+      help_text: "Want help choosing or integrating these tools?",
+      cta_button: "Talk to us",
+      items: [
+        {
+          id: "notta",
+          icon: "notes",
+          name: "Notta.ai",
+          category: "Meeting Notes - Transcription & Summary",
+          description: "Joins meetings, transcribes and summarizes automatically, speaker identification, full Hebrew support",
+          pros: [],
+          cons: [],
+          price: "Free plan available, $8/month. \n 10% discount via link",
+          tip: "Build a fixed NEXT STEPS template and send automatic summaries to participants. The link provides 10% discount.",
+          link: "https://notta.cello.so/tkZ7HrLLQO2"
+        },
+        {
+          id: "genspark",
+          icon: "presentation",
+          name: "GenSpark AI",
+          category: "Creating Presentations",
+          description: "Generates slide decks from a short brief, pulls content from the internet.",
+          pros: [],
+          cons: [],
+          price: "Free tier, ~$19.99/mo",
+          tip: "Provide 5–7 bullet inputs plus source links to reduce hallucinations.",
+          link: "https://www.genspark.ai/"
+        },
+        {
+          id: "base44",
+          icon: "internal",
+          name: "Base44",
+          category: "Internal Apps",
+          description: "Build internal tools and automations in minutes with AI; includes roles and common integrations.",
+          pros: [],
+          cons: [],
+          price: "Base plans from ~$10/user/mo; enterprise available",
+          tip: "Start with one daily workflow (approvals/requests) and plug into Slack or Monday first.",
+          link: "https://base44.com/"
+        }
+      ]
+    },
     hero: {
+      tagline: "AI that speaks business",
       title: "Simplifying AI for Your Business",
-      subtitle: "Stop wasting time on manual processes. We help businesses implement AI solutions that increase profitability, save valuable work hours, and create a real competitive edge.",
+      subtitle: "We build AI automations and agents that deliver ROI fast.",
+      short_description: "End-to-end AI delivery: map the process, build, integrate, measure – in English and Hebrew.",
       cta_primary: "Book Free AI Consultation",
       cta_secondary: "Explore Solutions"
     },

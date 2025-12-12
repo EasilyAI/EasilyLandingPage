@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
-export const BlogPreview = ({ t }) => {
+export const BlogPreview = ({ t, withLangPath }) => {
   // Show only first 2 blog posts as preview
   const previewPosts = t.blog.items.slice(0, 2);
 
@@ -17,7 +17,7 @@ export const BlogPreview = ({ t }) => {
           {previewPosts.map((post) => (
             <Link
               key={post.id}
-              to={`/blog/${post.id}`}
+              to={withLangPath(`/blog/${post.id}`)}
               className="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col cursor-pointer group"
             >
               <div className="p-10 flex-grow">
@@ -40,7 +40,7 @@ export const BlogPreview = ({ t }) => {
 
         <div className="text-center">
           <Link
-            to="/blog"
+            to={withLangPath('/blog')}
             className="inline-flex items-center gap-2 bg-[#172736] hover:bg-[#2a415f] text-white px-8 py-4 rounded-xl font-bold shadow-lg transition-colors"
           >
             {t.blog.title}

@@ -3,14 +3,15 @@ import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { IconMap } from '../ui/IconMap';
 
-export const Services = ({ t, onSelectService }) => {
+export const Services = ({ t, onSelectService, withLangPath }) => {
   const navigate = useNavigate();
   
   const handleServiceClick = (service) => {
     if (onSelectService) {
       onSelectService(service);
     } else {
-      navigate(`/services/${service.id}`);
+      const target = withLangPath ? withLangPath(`/services/${service.id}`) : `/services/${service.id}`;
+      navigate(target);
     }
   };
   

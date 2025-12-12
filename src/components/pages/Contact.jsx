@@ -2,14 +2,48 @@ import React, { useState } from 'react';
 import { CheckCircle2, Mail, Linkedin, Instagram } from 'lucide-react';
 
 export const Contact = ({ t, lang }) => {
-  const [formState, setFormState] = useState('idle'); // idle, submitting, success
+  const [formState, setFormState] = useState('idle'); // idle, submitting, success, error
+  const [errors, setErrors] = useState({});
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const formData = new FormData(e.target);
+    const payload = Object.fromEntries(formData.entries());
+
+    // Honeypot protection
+    if (payload.website) return;
+
+    const nextErrors = {};
+    if (!payload.name?.trim()) nextErrors.name = 'Name is required';
+    if (!payload.email?.trim()) nextErrors.email = 'Email is required';
+    if (payload.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)) {
+      nextErrors.email = 'Invalid email';
+    }
+    if (Object.keys(nextErrors).length) {
+      setErrors(nextErrors);
+      return;
+    }
+
+    setErrors({});
     setFormState('submitting');
-    setTimeout(() => {
+
+    try {
+      const endpoint = import.meta.env.VITE_CONTACT_ENDPOINT;
+      if (endpoint) {
+        await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+      } else {
+        // If no endpoint is configured, simulate success to keep UX responsive.
+        await new Promise(resolve => setTimeout(resolve, 1200));
+      }
       setFormState('success');
-    }, 1500);
+      e.target.reset();
+    } catch (err) {
+      setFormState('error');
+    }
   };
 
   return (
@@ -22,9 +56,9 @@ export const Contact = ({ t, lang }) => {
 
         <div className="bg-white rounded-[2.5rem] p-8 md:p-14 shadow-2xl border border-gray-100">
           {formState === 'success' ? (
-            <div className="text-center py-12 animate-fade-in">
+            <div className="text-center py-12 animate-fade-in" role="status" aria-live="polite">
               <div className="w-24 h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-8">
-                <CheckCircle2 size={48} />
+                <CheckCircle2 size={48} aria-hidden="true" />
               </div>
               <h3 className="text-3xl font-bold text-[#172736] mb-4 font-display">{t.contact.form.success}</h3>
               <button 
@@ -35,38 +69,79 @@ export const Contact = ({ t, lang }) => {
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+              <input type="text" name="website" tabIndex="-1" aria-hidden="true" className="hidden" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-bold text-[#172736] mb-2 font-mono">{t.contact.form.name}</label>
-                  <input required type="text" className="w-full px-6 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:bg-white focus:ring-2 focus:ring-[#817DFF] focus:border-transparent outline-none transition" />
+                  <label className="block text-sm font-bold text-[#172736] mb-2 font-mono" htmlFor="name-input">{t.contact.form.name}</label>
+                  <input 
+                    id="name-input"
+                    name="name"
+                    required 
+                    type="text" 
+                    aria-invalid={Boolean(errors.name)}
+                    aria-describedby={errors.name ? 'name-error' : undefined}
+                    className="w-full px-6 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:bg-white focus:ring-2 focus:ring-[#817DFF] focus:border-transparent outline-none transition" 
+                  />
+                  {errors.name ? <p id="name-error" className="mt-1 text-sm text-red-600">{errors.name}</p> : null}
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-[#172736] mb-2 font-mono">{t.contact.form.email}</label>
-                  <input required type="email" className="w-full px-6 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:bg-white focus:ring-2 focus:ring-[#817DFF] focus:border-transparent outline-none transition" />
+                  <label className="block text-sm font-bold text-[#172736] mb-2 font-mono" htmlFor="email-input">{t.contact.form.email}</label>
+                  <input 
+                    id="email-input"
+                    name="email"
+                    required 
+                    type="email" 
+                    aria-invalid={Boolean(errors.email)}
+                    aria-describedby={errors.email ? 'email-error' : undefined}
+                    className="w-full px-6 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:bg-white focus:ring-2 focus:ring-[#817DFF] focus:border-transparent outline-none transition" 
+                  />
+                  {errors.email ? <p id="email-error" className="mt-1 text-sm text-red-600">{errors.email}</p> : null}
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-bold text-[#172736] mb-2 font-mono">{t.contact.form.phone}</label>
-                  <input type="tel" className="w-full px-6 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:bg-white focus:ring-2 focus:ring-[#817DFF] focus:border-transparent outline-none transition" />
+                  <label className="block text-sm font-bold text-[#172736] mb-2 font-mono" htmlFor="phone-input">{t.contact.form.phone}</label>
+                  <input 
+                    id="phone-input"
+                    name="phone"
+                    type="tel" 
+                    className="w-full px-6 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:bg-white focus:ring-2 focus:ring-[#817DFF] focus:border-transparent outline-none transition" 
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-[#172736] mb-2 font-mono">{t.contact.form.company}</label>
-                  <input type="text" className="w-full px-6 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:bg-white focus:ring-2 focus:ring-[#817DFF] focus:border-transparent outline-none transition" />
+                  <label className="block text-sm font-bold text-[#172736] mb-2 font-mono" htmlFor="company-input">{t.contact.form.company}</label>
+                  <input 
+                    id="company-input"
+                    name="company"
+                    type="text" 
+                    className="w-full px-6 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:bg-white focus:ring-2 focus:ring-[#817DFF] focus:border-transparent outline-none transition" 
+                  />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-bold text-[#172736] mb-2 font-mono">{t.contact.form.interest}</label>
-                <textarea rows="4" className="w-full px-6 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:bg-white focus:ring-2 focus:ring-[#817DFF] focus:border-transparent outline-none transition"></textarea>
+                <label className="block text-sm font-bold text-[#172736] mb-2 font-mono" htmlFor="interest-input">{t.contact.form.interest}</label>
+                <textarea 
+                  id="interest-input"
+                  name="interest"
+                  rows="4" 
+                  className="w-full px-6 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:bg-white focus:ring-2 focus:ring-[#817DFF] focus:border-transparent outline-none transition"
+                ></textarea>
               </div>
-              <button 
-                type="submit" 
-                disabled={formState === 'submitting'}
-                className="w-full bg-[#817DFF] hover:bg-[#6c68e3] text-white text-xl font-bold py-5 rounded-xl shadow-lg transition transform hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed mt-4"
-              >
-                {formState === 'submitting' ? '...' : t.contact.form.submit}
-              </button>
+              {formState === 'error' ? (
+                <p className="text-red-600 text-sm" role="alert">
+                  Something went wrong. Please try again or contact us directly.
+                </p>
+              ) : null}
+              <div className="flex justify-center">
+                <button 
+                  type="submit" 
+                  disabled={formState === 'submitting'}
+                  className="w-full md:w-auto bg-[#817DFF] hover:bg-[#6c68e3] text-white text-xl font-bold px-10 py-5 rounded-xl shadow-lg transition transform hover:-translate-y-1 disabled:opacity-70 disabled:cursor-not-allowed mt-4"
+                >
+                  {formState === 'submitting' ? '...' : t.contact.form.submit}
+                </button>
+              </div>
             </form>
           )}
 

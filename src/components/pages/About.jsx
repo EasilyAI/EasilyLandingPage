@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Workflow, Bot, CheckCircle2, Linkedin } from 'lucide-react';
 
-export const About = ({ t }) => {
+export const About = ({ t, withLangPath }) => {
   const navigate = useNavigate();
   
   return (
@@ -42,7 +42,7 @@ export const About = ({ t }) => {
             </div>
           </div>
           <button 
-            onClick={() => navigate('/contact')}
+            onClick={() => navigate(withLangPath ? withLangPath('/contact') : '/contact')}
             className="mt-12 bg-[#817DFF] hover:bg-[#6c68e3] text-white px-10 py-4 rounded-xl font-bold shadow-lg inline-flex items-center gap-2 transition-transform hover:scale-105"
           >
             {t.contact.form.submit}

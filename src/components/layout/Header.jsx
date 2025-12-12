@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Menu, X, Globe } from 'lucide-react';
 import { Logo } from '../ui/Logo';
 
-export const Header = ({ lang, setLang, t, isScrolled }) => {
+export const Header = ({ lang, setLang, t, isScrolled, withLangPath }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -14,6 +14,7 @@ export const Header = ({ lang, setLang, t, isScrolled }) => {
   const navLinks = [
     { path: '/', label: t.nav.home },
     { path: '/services', label: t.nav.services },
+    { path: '/ai-tools', label: t.nav.ai_tools },
     { path: '/about', label: t.nav.about },
     { path: '/blog', label: t.nav.blog },
     { path: '/contact', label: t.nav.contact },
@@ -24,7 +25,7 @@ export const Header = ({ lang, setLang, t, isScrolled }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           
-          <Link to="/" className="cursor-pointer">
+          <Link to={withLangPath('/')} className="cursor-pointer">
             <Logo />
           </Link>
 
@@ -33,7 +34,7 @@ export const Header = ({ lang, setLang, t, isScrolled }) => {
             {navLinks.map(link => (
               <Link
                 key={link.path}
-                to={link.path}
+                to={withLangPath(link.path)}
                 className="text-[#172736] hover:text-[#817DFF] font-medium transition-colors px-2 text-sm lg:text-base"
               >
                 {link.label}
@@ -45,13 +46,13 @@ export const Header = ({ lang, setLang, t, isScrolled }) => {
           <div className="hidden md:flex items-center space-x-4 space-x-reverse gap-4">
             <button 
               onClick={toggleLang}
-              className="flex items-center text-[#172736] hover:text-[#817DFF] font-medium text-sm font-mono"
+              className="flex items-center justify-center min-w-[56px] text-[#172736] hover:text-[#817DFF] font-medium text-sm font-mono"
             >
               <Globe size={16} className="mx-1" />
               <span>{lang === 'he' ? 'EN' : 'עב'}</span>
             </button>
             <button 
-              onClick={() => navigate('/contact')}
+              onClick={() => navigate(withLangPath('/contact'))}
               className="bg-[#817DFF] hover:bg-[#6c68e3] text-white px-5 py-2 rounded-lg font-bold shadow-md transform transition hover:-translate-y-0.5 text-sm"
             >
               {t.nav.cta}
@@ -62,7 +63,7 @@ export const Header = ({ lang, setLang, t, isScrolled }) => {
           <div className="md:hidden flex items-center gap-4">
              <button 
               onClick={toggleLang}
-              className="text-[#172736] font-bold text-sm"
+              className="text-[#172736] font-bold text-sm min-w-[48px]"
             >
               {lang === 'he' ? 'EN' : 'HE'}
             </button>
@@ -79,7 +80,7 @@ export const Header = ({ lang, setLang, t, isScrolled }) => {
           {navLinks.map(link => (
             <Link
               key={link.path}
-              to={link.path}
+              to={withLangPath(link.path)}
               onClick={() => setMobileMenuOpen(false)}
               className="text-lg font-medium text-[#172736] py-3 border-b border-gray-50 text-start"
             >
@@ -88,7 +89,7 @@ export const Header = ({ lang, setLang, t, isScrolled }) => {
           ))}
           <button 
             onClick={() => {
-              navigate('/contact');
+              navigate(withLangPath('/contact'));
               setMobileMenuOpen(false);
             }}
             className="bg-[#817DFF] text-white w-full py-3 rounded-lg font-bold mt-2"

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { IconMap } from '../ui/IconMap';
 
-export const ServicesPreview = ({ t }) => {
+export const ServicesPreview = ({ t, withLangPath }) => {
   // Show only first 3 services as preview
   const previewServices = t.services.items.slice(0, 3);
 
@@ -19,7 +19,7 @@ export const ServicesPreview = ({ t }) => {
           {previewServices.map((item, index) => (
             <Link
               key={index}
-              to={`/services/${item.id}`}
+              to={withLangPath(`/services/${item.id}`)}
               className="group p-8 rounded-[2rem] bg-white border border-gray-100 hover:border-[#817DFF] shadow-sm hover:shadow-2xl transition-all duration-300 cursor-pointer relative overflow-hidden flex flex-col h-full"
             >
               <div className="relative z-10 flex flex-col h-full">
@@ -38,7 +38,7 @@ export const ServicesPreview = ({ t }) => {
 
         <div className="text-center">
           <Link
-            to="/services"
+            to={withLangPath('/services')}
             className="inline-flex items-center gap-2 bg-[#172736] hover:bg-[#2a415f] text-white px-8 py-4 rounded-xl font-bold shadow-lg transition-colors"
           >
             {t.nav.services}
