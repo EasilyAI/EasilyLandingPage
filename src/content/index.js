@@ -68,10 +68,10 @@ export const content = {
       ]
     },
     hero: {
-      tagline: "AI שמדבר תוצאות",
-      title: "מפשטים את הבינה המלאכותית לעסק שלכם",
+      tagline: "AI לעסק שלך",
+      title: "בינה מלאכותית שעובדת בשביל העסק שלך",
       subtitle: "נבנה יחד אוטומציות, סוכנים ותהליכי AI שמייצרים ROI מדיד.",
-      short_description: "יישום AI מקצה לקצה: מיפוי תהליכים, בנייה, חיבור למערכות ומדידה – בעברית ובאנגלית.",
+      short_description: "ייעול תהליכים עסקיים ע״י הטמעת יכולות בינה מלאכותית בהתאמה אישית.",
       cta_primary: "הירשמו לפגישת אפיון AI בחינם",
       cta_secondary: "גלה איך אנחנו עוזרים"
     },
@@ -342,11 +342,11 @@ export const content = {
       ]
     },
     hero: {
-      tagline: "AI that speaks business",
-      title: "Simplifying AI for Your Business",
-      subtitle: "We build AI automations and agents that deliver ROI fast.",
-      short_description: "End-to-end AI delivery: map the process, build, integrate, measure – in English and Hebrew.",
-      cta_primary: "Book Free AI Consultation",
+      tagline: "AI for your business",
+      title: "Integrating AI capabilities in businesses",
+      subtitle: "We'll build together automations, agents and AI processes that generate measurable ROI.",
+      short_description: "Business process optimization through AI capabilities - Custom made.",
+      cta_primary: "Free AI consultation meeting",
       cta_secondary: "Explore Solutions"
     },
     services: {
