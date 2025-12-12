@@ -1,13 +1,25 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { IconMap } from '../ui/IconMap';
 import { VisualPlaceholder } from '../ui/VisualPlaceholder';
 import { content } from '../../content';
 
-export const ServiceDetail = ({ service, t, onBack }) => (
+export const ServiceDetail = ({ service, t, onBack }) => {
+  const navigate = useNavigate();
+  
+  const handleBack = () => {
+    if (onBack) {
+      onBack();
+    } else {
+      navigate('/services');
+    }
+  };
+  
+  return (
   <div className="py-24 bg-white min-h-screen">
     <div className="max-w-6xl mx-auto px-4">
-      <button onClick={onBack} className="flex items-center gap-2 text-gray-500 hover:text-[#817DFF] mb-8 font-medium font-mono text-sm">
+      <button onClick={handleBack} className="flex items-center gap-2 text-gray-500 hover:text-[#817DFF] mb-8 font-medium font-mono text-sm">
         <ArrowRight size={18} className="rtl:rotate-180" /> {t.nav.back}
       </button>
       
@@ -57,7 +69,7 @@ export const ServiceDetail = ({ service, t, onBack }) => (
               </div>
               
               <div className="mt-12 text-center">
-                 <button className="bg-[#172736] text-white w-full py-4 rounded-xl font-bold shadow-lg hover:bg-[#2a415f] transition-colors">
+                 <button onClick={() => navigate('/contact')} className="bg-[#172736] text-white w-full py-4 rounded-xl font-bold shadow-lg hover:bg-[#2a415f] transition-colors">
                     {t.nav.cta}
                  </button>
               </div>
@@ -77,12 +89,13 @@ export const ServiceDetail = ({ service, t, onBack }) => (
           ))}
         </div>
         <div className="mt-12">
-           <button className="bg-[#172736] text-white w-full py-4 rounded-xl font-bold shadow-lg">
+           <button onClick={() => navigate('/contact')} className="bg-[#172736] text-white w-full py-4 rounded-xl font-bold shadow-lg">
               {t.nav.cta}
            </button>
         </div>
       </div>
     </div>
   </div>
-);
+  );
+};
 

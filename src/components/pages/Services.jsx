@@ -1,8 +1,20 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { IconMap } from '../ui/IconMap';
 
-export const Services = ({ t, onSelectService }) => (
+export const Services = ({ t, onSelectService }) => {
+  const navigate = useNavigate();
+  
+  const handleServiceClick = (service) => {
+    if (onSelectService) {
+      onSelectService(service);
+    } else {
+      navigate(`/services/${service.id}`);
+    }
+  };
+  
+  return (
   <section className="py-24 bg-white">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-20">
@@ -14,7 +26,7 @@ export const Services = ({ t, onSelectService }) => (
         {t.services.items.map((item, index) => (
           <div 
             key={index} 
-            onClick={() => onSelectService(item)}
+            onClick={() => handleServiceClick(item)}
             className="group p-8 rounded-[2rem] bg-white border border-gray-100 hover:border-[#817DFF] shadow-sm hover:shadow-2xl transition-all duration-300 cursor-pointer relative overflow-hidden flex flex-col h-full"
           >
             <div className="relative z-10 flex flex-col h-full">
@@ -32,5 +44,6 @@ export const Services = ({ t, onSelectService }) => (
       </div>
     </div>
   </section>
-);
+  );
+};
 

@@ -1,7 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
-export const Blog = ({ t, onSelectPost }) => (
+export const Blog = ({ t, onSelectPost }) => {
+  const navigate = useNavigate();
+  
+  const handlePostClick = (post) => {
+    if (onSelectPost) {
+      onSelectPost(post);
+    } else {
+      navigate(`/blog/${post.id}`);
+    }
+  };
+  
+  return (
   <section className="py-24 bg-[#FAFAFA]">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-16">
@@ -12,7 +24,7 @@ export const Blog = ({ t, onSelectPost }) => (
         {t.blog.items.map((post) => (
           <div 
             key={post.id} 
-            onClick={() => onSelectPost(post)}
+            onClick={() => handlePostClick(post)}
             className="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col cursor-pointer group"
           >
             <div className="p-10 flex-grow">
@@ -34,5 +46,6 @@ export const Blog = ({ t, onSelectPost }) => (
       </div>
     </div>
   </section>
-);
+  );
+};
 

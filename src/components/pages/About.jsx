@@ -1,7 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Workflow, Bot, CheckCircle2, Linkedin } from 'lucide-react';
 
-export const About = ({ t, setPage }) => (
+export const About = ({ t }) => {
+  const navigate = useNavigate();
+  
+  return (
   <section className="py-24 bg-[#172736] text-white relative overflow-hidden">
     {/* Decorative background */}
     <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
@@ -38,7 +42,7 @@ export const About = ({ t, setPage }) => (
             </div>
           </div>
           <button 
-            onClick={() => setPage('contact')}
+            onClick={() => navigate('/contact')}
             className="mt-12 bg-[#817DFF] hover:bg-[#6c68e3] text-white px-10 py-4 rounded-xl font-bold shadow-lg inline-flex items-center gap-2 transition-transform hover:scale-105"
           >
             {t.contact.form.submit}
@@ -65,5 +69,6 @@ export const About = ({ t, setPage }) => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
