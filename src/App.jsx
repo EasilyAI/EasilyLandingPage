@@ -15,6 +15,7 @@ import { Contact } from './components/pages/Contact';
 import { content } from './content';
 import { SEO } from './components/layout/SEO';
 import { Analytics } from './components/layout/Analytics';
+import { BannerAd } from './components/ui/BannerAd';
 
 // Language context wrapper
 function AppContent() {
@@ -126,6 +127,8 @@ function AppContent() {
         </Routes>
       </main>
 
+      {/* Side banner: Hebrew only, fixed under header on desktop */}
+      <BannerAd lang={lang} />
       <Footer t={t} withLangPath={withLangPath} />
     </div>
   );

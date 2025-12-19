@@ -6,14 +6,14 @@ export const Hero = ({ t, lang, withLangPath }) => {
   const navigate = useNavigate();
   
   return (
-    <section className="relative pt-32 pb-16 lg:pt-44 lg:pb-28 overflow-hidden">
+    <section className="relative pt-32 pb-16 lg:pt-44 lg:pb-52 overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: 'url(/BackroundPicture.png)' }}
       ></div>
       {/* Overlay for readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/90 to-[#FAFAFA]/95"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/85 to-[#FAFAFA]/95"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-5xl mx-auto text-center space-y-6">
@@ -46,4 +46,3 @@ export const Hero = ({ t, lang, withLangPath }) => {
     </section>
   );
 };
-
