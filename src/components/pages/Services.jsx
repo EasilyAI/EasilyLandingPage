@@ -37,7 +37,7 @@ export const Services = ({ t, onSelectService, withLangPath }) => {
               <h3 className="text-xl font-bold text-[#172736] mb-4 font-display">{item.title}</h3>
               <p className="text-gray-600 leading-relaxed mb-8 line-clamp-3">{item.short_desc}</p>
               <div className="mt-auto text-[#817DFF] font-bold flex items-center gap-2 text-sm font-mono group-hover:translate-x-2 rtl:group-hover:-translate-x-2 transition-transform">
-                {t.blog.read_more} <ArrowRight size={16} className="rtl:rotate-180" />
+                {t.services.read_more} <ArrowRight size={16} className="rtl:rotate-180" />
               </div>
             </div>
           </div>

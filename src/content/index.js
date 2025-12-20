@@ -78,6 +78,7 @@ export const content = {
     services: {
       title: "הפתרונות שלנו",
       subtitle: "אנחנו לא מוכרים טכנולוגיה לשם טכנולוגיה. אנחנו מוכרים שקט נפשי, יעילות אופרטיבית וצמיחה עסקית מדידה.",
+      read_more: "קרא עוד",
       items: [
         {
           id: "chatbots",
