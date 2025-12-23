@@ -167,14 +167,12 @@ export const About = ({ t, withLangPath, lang = 'he' }) => {
         <div className="relative">
           <div className="relative bg-white p-2 rounded-[2.5rem] shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500">
              <div className="aspect-[4/5] bg-gray-200 rounded-[2.3rem] overflow-hidden relative group">
-                {/* Fallback image placeholder */}
-                <div 
-                  className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-gray-400"
-                  role="img"
-                  aria-label="Omer Lewinsky - Founder & AI Architect"
-                >
-                  <span className="text-center p-4 font-mono">Omer Lewinsky<br/>(Founder Image)</span>
-                </div>
+                {/* Profile image */}
+                <img 
+                  src="/profile_image.png"
+                  alt="Omer Lewinsky - Founder & AI Architect"
+                  className="w-full h-full object-cover"
+                />
                 <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-10 pt-32">
                   <h4 className="text-3xl font-bold text-white font-display">Omer Lewinsky</h4>
                   <p className="text-[#817DFF] font-medium font-mono mt-2">
