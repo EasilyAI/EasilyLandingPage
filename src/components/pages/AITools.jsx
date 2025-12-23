@@ -15,7 +15,7 @@ const iconMap = {
   analytics: ShieldCheck,
 };
 
-export const AITools = ({ t }) => {
+export const AITools = ({ t, lang = 'he' }) => {
   const tools = t.ai_tools.items;
 
   return (
@@ -28,9 +28,57 @@ export const AITools = ({ t }) => {
           <h1 className="text-3xl md:text-5xl font-black text-[#172736] mt-6 mb-4 font-display">
             {t.ai_tools.title}
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
             {t.ai_tools.subtitle}
           </p>
+          
+          {/* SEO Content Section - Hidden visually but available for search engines */}
+          <div className="sr-only">
+            <h2>{lang === 'en' ? 'What does Easily AI do?' : 'מה Easily AI עושה?'}</h2>
+            <p>
+              {lang === 'en'
+                ? 'Easily AI helps small and medium businesses automate processes using custom GPT solutions, chatbots, and data systems. We provide AI automation for customer support, internal knowledge management, workflow optimization, and business analytics.'
+                : 'Easily AI עוזרת לעסקים קטנים ובינוניים לאוטמט תהליכים באמצעות פתרונות GPT מותאמים אישית, צ\'אטבוטים ומערכות נתונים. אנחנו מספקים אוטומציה מבוססת AI לשירות לקוחות, ניהול ידע פנימי, ייעול תהליכי עבודה ואנליטיקה עסקית.'}
+            </p>
+            
+            <h2>{lang === 'en' ? 'Frequently Asked Questions' : 'שאלות נפוצות'}</h2>
+            
+            <div>
+              <h3>{lang === 'en' ? 'What AI tools does Easily AI recommend?' : 'אילו כלי AI Easily AI ממליצה?'}</h3>
+              <p>
+                {lang === 'en'
+                  ? 'Easily AI recommends proven AI tools including Notta.ai for automated meeting transcription, GenSpark AI for presentation creation, and Base44 for building internal apps and automations. These tools are specifically selected for their value to small and medium businesses.'
+                  : 'Easily AI ממליצה על כלי AI מוכחים כולל Notta.ai לתמלול פגישות אוטומטי, GenSpark AI ליצירת מצגות, ו-Base44 לבניית אפליקציות פנימיות ואוטומציות. הכלים האלה נבחרו במיוחד בשל הערך שלהם לעסקים קטנים ובינוניים.'}
+              </p>
+            </div>
+            
+            <div>
+              <h3>{lang === 'en' ? 'How do AI tools help small businesses?' : 'איך כלי AI עוזרים לעסקים קטנים?'}</h3>
+              <p>
+                {lang === 'en'
+                  ? 'AI tools help small businesses automate routine tasks, improve productivity, and deliver better customer experiences without extensive technical expertise or large budgets. Tools like automated meeting transcription save hours of note-taking, AI presentation builders create professional decks in minutes, and internal app builders enable custom workflows without coding.'
+                  : 'כלי AI עוזרים לעסקים קטנים לאוטמט משימות שגרתיות, לשפר פרודוקטיביות ולספק חוויות לקוח טובות יותר ללא ידע טכני נרחב או תקציבים גדולים. כלים כמו תמלול פגישות אוטומטי חוסכים שעות של רישום הערות, בוני מצגות מבוססי AI יוצרים מצגות מקצועיות תוך דקות, ובוני אפליקציות פנימיות מאפשרים תהליכי עבודה מותאמים אישית ללא קוד.'}
+              </p>
+            </div>
+            
+            <div>
+              <h3>{lang === 'en' ? 'How long does AI implementation take?' : 'כמה זמן לוקח להטמיע AI?'}</h3>
+              <p>
+                {lang === 'en'
+                  ? 'Most projects take 2-6 weeks, depending on scope. Simple chatbot implementations can be completed in 2-3 weeks, while more complex knowledge management systems may take 4-6 weeks.'
+                  : 'רוב הפרויקטים לוקחים 2-6 שבועות, תלוי בהיקף. הטמעות צ\'אטבוט פשוטות יכולות להסתיים תוך 2-3 שבועות, בעוד שמערכות ניהול ידע מורכבות יותר עשויות לקחת 4-6 שבועות.'}
+              </p>
+            </div>
+            
+            <div>
+              <h3>{lang === 'en' ? 'Do I need technical knowledge to use these AI tools?' : 'האם אני צריך ידע טכני כדי להשתמש בכלי AI האלה?'}</h3>
+              <p>
+                {lang === 'en'
+                  ? 'Most recommended AI tools are designed to be user-friendly and require minimal technical knowledge. However, Easily AI can help with tool selection, integration into your business processes, and custom implementation if needed.'
+                  : 'רוב כלי ה-AI המומלצים מתוכננים להיות ידידותיים למשתמש ודורשים ידע טכני מינימלי. עם זאת, Easily AI יכולה לעזור בבחירת כלים, אינטגרציה לתהליכי העסק שלכם, והטמעה מותאמת אישית במידת הצורך.'}
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 gap-5">

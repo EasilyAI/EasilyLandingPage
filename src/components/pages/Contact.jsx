@@ -79,8 +79,52 @@ export const Contact = ({ t, lang }) => {
     <section className="pt-8 pb-16 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-5xl font-black text-[#172736] mb-3 font-display">{t.contact.title}</h2>
-          <p className="text-lg md:text-xl text-gray-600">{subtitleText}</p>
+          <h1 className="text-3xl md:text-5xl font-black text-[#172736] mb-3 font-display">{t.contact.title}</h1>
+          <p className="text-lg md:text-xl text-gray-600 mb-8">{subtitleText}</p>
+          
+          {/* SEO Content Section - Hidden visually but available for search engines */}
+          <div className="sr-only">
+            <h2>{lang === 'en' ? 'What does Easily AI do?' : 'מה Easily AI עושה?'}</h2>
+            <p>
+              {lang === 'en'
+                ? 'Easily AI helps small and medium businesses automate processes using custom GPT solutions, chatbots, and data systems. We provide AI automation for customer support, internal knowledge management, workflow optimization, and business analytics.'
+                : 'Easily AI עוזרת לעסקים קטנים ובינוניים לאוטמט תהליכים באמצעות פתרונות GPT מותאמים אישית, צ\'אטבוטים ומערכות נתונים. אנחנו מספקים אוטומציה מבוססת AI לשירות לקוחות, ניהול ידע פנימי, ייעול תהליכי עבודה ואנליטיקה עסקית.'}
+            </p>
+            
+            <h2>{lang === 'en' ? 'Frequently Asked Questions' : 'שאלות נפוצות'}</h2>
+            <div>
+              <h3>{lang === 'en' ? 'How long does AI implementation take?' : 'כמה זמן לוקח להטמיע AI?'}</h3>
+              <p>
+                {lang === 'en'
+                  ? 'Most projects take 2-6 weeks, depending on scope. Simple chatbot implementations can be completed in 2-3 weeks, while more complex knowledge management systems may take 4-6 weeks.'
+                  : 'רוב הפרויקטים לוקחים 2-6 שבועות, תלוי בהיקף. הטמעות צ\'אטבוט פשוטות יכולות להסתיים תוך 2-3 שבועות, בעוד שמערכות ניהול ידע מורכבות יותר עשויות לקחת 4-6 שבועות.'}
+              </p>
+            </div>
+            <div>
+              <h3>{lang === 'en' ? 'What types of businesses does Easily AI work with?' : 'עם אילו סוגי עסקים Easily AI עובדת?'}</h3>
+              <p>
+                {lang === 'en'
+                  ? 'We work with small and medium-sized businesses across various industries including retail, professional services, healthcare, real estate, and e-commerce. Our solutions are designed for businesses that want to improve efficiency and scale operations without proportionally increasing costs.'
+                  : 'אנחנו עובדים עם עסקים קטנים ובינוניים במגוון תעשיות כולל קמעונאות, שירותים מקצועיים, בריאות, נדל"ן ומסחר אלקטרוני. הפתרונות שלנו מתוכננים עבור עסקים שרוצים לשפר יעילות ולהרחיב פעילות ללא הגדלה פרופורציונלית של עלויות.'}
+              </p>
+            </div>
+            <div>
+              <h3>{lang === 'en' ? 'Do I need technical knowledge to use Easily AI solutions?' : 'האם אני צריך ידע טכני כדי להשתמש בפתרונות Easily AI?'}</h3>
+              <p>
+                {lang === 'en'
+                  ? 'No technical knowledge is required. We handle all implementation, training, and ongoing support. Our solutions are designed to be user-friendly and integrate seamlessly with your existing systems.'
+                  : 'לא נדרש ידע טכני. אנחנו מטפלים בכל ההטמעה, ההדרכה והתמיכה המתמשכת. הפתרונות שלנו מתוכננים להיות ידידותיים למשתמש ולהשתלב בצורה חלקה עם המערכות הקיימות שלכם.'}
+              </p>
+            </div>
+            <div>
+              <h3>{lang === 'en' ? 'How much does AI implementation cost?' : 'כמה עולה הטמעת AI?'}</h3>
+              <p>
+                {lang === 'en'
+                  ? 'Costs vary based on project scope and requirements. We offer a free consultation to assess your needs and provide a detailed quote. Most small business implementations start from affordable monthly packages.'
+                  : 'העלויות משתנות בהתאם להיקף הפרויקט והדרישות. אנחנו מציעים ייעוץ חינם כדי להעריך את הצרכים שלכם ולספק הצעת מחיר מפורטת. רוב ההטמעות לעסקים קטנים מתחילות מחבילות חודשיות במחיר נגיש.'}
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="bg-white rounded-[2.5rem] p-6 md:p-12 shadow-2xl border border-gray-100">

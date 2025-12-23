@@ -64,39 +64,51 @@ function AppContent() {
     const path = location.pathname;
     if (path.startsWith('/services')) {
       return {
-        seoTitle: t.services.title,
+        seoTitle: lang === 'en' 
+          ? 'AI Solutions for Small Businesses | Easily AI'
+          : 'פתרונות AI לעסקים קטנים ובינוניים | Easily AI',
         seoDescription: t.services.subtitle,
       };
     }
     if (path.startsWith('/ai-tools')) {
       return {
-        seoTitle: t.ai_tools.title,
+        seoTitle: lang === 'en'
+          ? 'AI Tools for Business Owners | Easily AI'
+          : 'כלי AI לבעלי עסקים | Easily AI',
         seoDescription: t.ai_tools.subtitle,
       };
     }
     if (path.startsWith('/about')) {
       return {
-        seoTitle: t.about.title,
+        seoTitle: lang === 'en'
+          ? 'About Easily AI | AI Solutions for Small Businesses'
+          : 'אודות Easily AI | פתרונות AI לעסקים קטנים',
         seoDescription: t.about.mission_text,
       };
     }
     if (path.startsWith('/blog')) {
       return {
-        seoTitle: t.blog.title,
+        seoTitle: lang === 'en'
+          ? 'AI Implementation Guides & Case Studies | Easily AI Blog'
+          : 'מדריכי הטמעת AI ומקרי בוחן | בלוג Easily AI',
         seoDescription: t.blog.subtitle,
       };
     }
     if (path.startsWith('/contact')) {
       return {
-        seoTitle: t.contact.title,
+        seoTitle: lang === 'en'
+          ? 'Contact Easily AI | Free AI Consultation'
+          : 'צור קשר עם Easily AI | ייעוץ AI חינם',
         seoDescription: t.contact.subtitle,
       };
     }
     return {
-      seoTitle: t.hero.title,
+      seoTitle: lang === 'en'
+        ? 'AI Solutions for Small Businesses | Easily AI'
+        : 'פתרונות AI לעסקים קטנים ובינוניים | Easily AI',
       seoDescription: t.hero.subtitle,
     };
-  }, [location.pathname, t]);
+  }, [location.pathname, t, lang]);
 
   return (
     <div className={`min-h-screen font-sans bg-white selection:bg-[#817DFF] selection:text-white ${lang === 'he' ? 'font-hebrew' : 'font-english'}`}>
@@ -124,7 +136,7 @@ function AppContent() {
           <Route path="/blog" element={<BlogPage t={t} withLangPath={withLangPath} />} />
           <Route path="/blog/:id" element={<BlogDetailPage t={t} withLangPath={withLangPath} />} />
           <Route path="/contact" element={<ContactPage t={t} lang={lang} />} />
-          <Route path="/ai-tools" element={<AIToolsPage t={t} />} />
+          <Route path="/ai-tools" element={<AIToolsPage t={t} lang={lang} />} />
           <Route path="*" element={<NotFoundPage lang={lang} withLangPath={withLangPath} />} />
         </Routes>
       </main>
@@ -231,7 +243,7 @@ function ServicesPage({ t, lang, withLangPath }) {
 
   return (
     <div className="pt-24">
-      <Services t={t} onSelectService={handleServiceSelect} withLangPath={withLangPath} />
+      <Services t={t} onSelectService={handleServiceSelect} withLangPath={withLangPath} lang={lang} />
       <div className="max-w-4xl mx-auto px-6 pb-20 text-center">
         <p className="text-xl text-gray-600 mb-8 font-medium">
           {lang === 'he' 
@@ -323,10 +335,10 @@ function ContactPage({ t, lang }) {
 }
 
 // AI Tools Page Component
-function AIToolsPage({ t }) {
+function AIToolsPage({ t, lang }) {
   return (
     <div className="pt-16">
-      <AITools t={t} />
+      <AITools t={t} lang={lang} />
     </div>
   );
 }
