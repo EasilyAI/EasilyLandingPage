@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.easily-ai.com/</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.easily-ai.com/?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.easily-ai.com/?lang=en"/>
+  </url>
+
+  <!-- Services Page -->
+  <url>
+    <loc>https://www.easily-ai.com/services</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.easily-ai.com/services?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.easily-ai.com/services?lang=en"/>
+  </url>
+
+  <!-- Service Detail Pages -->
+  <url>
+    <loc>https://www.easily-ai.com/services/chatbots</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.easily-ai.com/services/chatbots?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.easily-ai.com/services/chatbots?lang=en"/>
+  </url>
+  <url>
+    <loc>https://www.easily-ai.com/services/search</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.easily-ai.com/services/search?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.easily-ai.com/services/search?lang=en"/>
+  </url>
+  <url>
+    <loc>https://www.easily-ai.com/services/automation</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.easily-ai.com/services/automation?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.easily-ai.com/services/automation?lang=en"/>
+  </url>
+  <url>
+    <loc>https://www.easily-ai.com/services/analytics</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.easily-ai.com/services/analytics?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.easily-ai.com/services/analytics?lang=en"/>
+  </url>
+  <url>
+    <loc>https://www.easily-ai.com/services/infrastructure</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.easily-ai.com/services/infrastructure?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.easily-ai.com/services/infrastructure?lang=en"/>
+  </url>
+  <url>
+    <loc>https://www.easily-ai.com/services/web-agents</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.easily-ai.com/services/web-agents?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.easily-ai.com/services/web-agents?lang=en"/>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://www.easily-ai.com/about</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.easily-ai.com/about?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.easily-ai.com/about?lang=en"/>
+  </url>
+
+  <!-- Blog Page -->
+  <url>
+    <loc>https://www.easily-ai.com/blog</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.easily-ai.com/blog?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.easily-ai.com/blog?lang=en"/>
+  </url>
+
+  <!-- Blog Detail Pages -->
+  <url>
+    <loc>https://www.easily-ai.com/blog/design-ai</loc>
+    <lastmod>2024-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.easily-ai.com/blog/design-ai?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.easily-ai.com/blog/design-ai?lang=en"/>
+  </url>
+  <url>
+    <loc>https://www.easily-ai.com/blog/pipeline-llm</loc>
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.easily-ai.com/blog/pipeline-llm?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.easily-ai.com/blog/pipeline-llm?lang=en"/>
+  </url>
+  <url>
+    <loc>https://www.easily-ai.com/blog/diabetes-bot</loc>
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.easily-ai.com/blog/diabetes-bot?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.easily-ai.com/blog/diabetes-bot?lang=en"/>
+  </url>
+  <url>
+    <loc>https://www.easily-ai.com/blog/memory-ai</loc>
+    <lastmod>2024-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.easily-ai.com/blog/memory-ai?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.easily-ai.com/blog/memory-ai?lang=en"/>
+  </url>
+  <url>
+    <loc>https://www.easily-ai.com/blog/web-search-ai</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.easily-ai.com/blog/web-search-ai?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.easily-ai.com/blog/web-search-ai?lang=en"/>
+  </url>
+  <url>
+    <loc>https://www.easily-ai.com/blog/future-skills</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.easily-ai.com/blog/future-skills?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.easily-ai.com/blog/future-skills?lang=en"/>
+  </url>
+
+  <!-- AI Tools Page -->
+  <url>
+    <loc>https://www.easily-ai.com/ai-tools</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.easily-ai.com/ai-tools?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.easily-ai.com/ai-tools?lang=en"/>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://www.easily-ai.com/contact</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="he" href="https://www.easily-ai.com/contact?lang=he"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.easily-ai.com/contact?lang=en"/>
+  </url>
+
+</urlset>
+
