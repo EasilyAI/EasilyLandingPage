@@ -72,8 +72,9 @@ export const content = {
       title: "בינה מלאכותית שעובדת בשביל העסק שלך",
       subtitle: "נבנה יחד אוטומציות, סוכנים ותהליכי AI שמייצרים ROI מדיד.",
       short_description: "ייעול תהליכים עסקיים ע״י הטמעת יכולות בינה מלאכותית בהתאמה אישית.",
-      cta_primary: "הירשמו לפגישת אפיון AI בחינם",
-      cta_secondary: "גלה איך אנחנו עוזרים"
+      cta_primary: "תיאום פגישת ייעוץ ללא עלות",
+      cta_secondary: "גלה איך אנחנו עוזרים",
+      cta_micro: "שיחה של 30 דקות לזיהוי הזדמנויות AI בעסק שלכם"
     },
     services: {
       title: "הפתרונות שלנו",
@@ -107,10 +108,10 @@ export const content = {
         {
           id: "automation",
           title: "ייעול תהליכים (Automations)",
-          short_desc: "שחררו את הצוות ממשימות שחורות. תנו ל-AI לעשות את העבודה השחורה.",
+          short_desc: "שחררו את הצוות ממשימות שגרתיות ומייגעות. תנו ל-AI לעשות את העבודה החוזרת.",
           icon: "Workflow",
           full_content: {
-            headline: "להחליף עבודה שחורה באוטומציה חכמה",
+            headline: "להחליף משימות שגרתיות באוטומציה חכמה",
             pain_point: "האם העובדים המוכשרים שלכם מבזבזים זמן על 'העברת ניירת'? הזנת לידים מפייסבוק לאקסל, תיוק חשבוניות ידני, שליחת מיילים גנריים... אלו משימות שוחקות שמובילות לטעויות אנוש ולירידה במוטיבציה. העסק משלם משכורת על אדמיניסטרציה במקום על צמיחה.",
             solution: "אנו בונים 'סוכנים חכמים' (AI Agents) ואוטומציות שמחברות בין כל המערכות שלכם. דמיינו תהליך שבו ליד נכנס, מקבל אוטומטית הצעת מחיר מותאמת אישית, המערכת מתזכרת אותו בוואטסאפ אחרי יום, וכשהוא מאשר - החשבונית יוצאת לבד. הכל קורה ברקע, ללא מגע יד אדם.",
             benefits: ["אפס טעויות בהזנת נתונים", "תהליכים שרצים 24/7 ללא הפסקה", "חיסכון דרמטי בעלויות תפעול", "שחרור העובדים למשימות יצירתיות ואסטרטגיות"]
@@ -272,11 +273,12 @@ export const content = {
       form: {
         name: "שם מלא",
         email: "כתובת אימייל",
-        phone: "טלפון",
-        company: "שם החברה",
+        phone: "טלפון (אופציונלי)",
+        company: "שם החברה (אופציונלי)",
         interest: "איפה הכאב העסקי שלכם?",
         submit: "שריין פגישת ייעוץ (חינם)",
-        success: "תודה! קיבלנו את הפנייה. נחזור אליכם בהקדם לתיאום."
+        success: "תודה! קיבלנו את הפנייה. נחזור אליכם בהקדם לתיאום.",
+        privacy: "המידע שלכם בטוח איתנו. אנחנו מתחייבים לשמור על פרטיותכם ולא להעביר את המידע לצד שלישי."
       },
       direct: "פרטי התקשרות ישירים:"
     }
@@ -347,8 +349,9 @@ export const content = {
       title: "Integrating AI capabilities in businesses",
       subtitle: "We'll build together automations, agents and AI processes that generate measurable ROI.",
       short_description: "Business process optimization through AI capabilities - Custom made.",
-      cta_primary: "Free AI consultation meeting",
-      cta_secondary: "Explore Solutions"
+      cta_primary: "Book Free AI Consultation",
+      cta_secondary: "Explore Solutions",
+      cta_micro: "30-minute call to identify AI opportunities in your business"
     },
     services: {
       title: "Our Solutions",
@@ -546,11 +549,12 @@ export const content = {
       form: {
         name: "Full Name",
         email: "Email Address",
-        phone: "Phone Number",
-        company: "Company Name",
+        phone: "Phone Number (Optional)",
+        company: "Company Name (Optional)",
         interest: "Where is your business pain point?",
         submit: "Book Consultation (Free)",
-        success: "Thank you! We received your request and will be in touch soon."
+        success: "Thank you! We received your request and will be in touch soon.",
+        privacy: "Your information is safe with us. We're committed to protecting your privacy and will never share your data with third parties."
       },
       direct: "Direct Contact:"
     }

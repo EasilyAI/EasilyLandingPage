@@ -20,17 +20,23 @@ export const Header = ({ lang, setLang, t, isScrolled, withLangPath }) => {
     { path: '/contact', label: t.nav.contact },
   ];
 
+  // Full language names for better UX
+  const languageLabel = lang === 'he' ? 'English' : 'עברית';
+  const languageAriaLabel = lang === 'he' 
+    ? 'Switch to English' 
+    : 'החלף לעברית';
+
   return (
     <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-3' : 'bg-white/95 backdrop-blur-sm py-4'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           
-          <Link to={withLangPath('/')} className="cursor-pointer">
+          <Link to={withLangPath('/')} className="cursor-pointer" aria-label="Easily AI - Home">
             <Logo />
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex space-x-8 space-x-reverse items-center">
+          <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
             {navLinks.map(link => (
               <Link
                 key={link.path}
@@ -43,13 +49,14 @@ export const Header = ({ lang, setLang, t, isScrolled, withLangPath }) => {
           </nav>
 
           {/* Right Actions */}
-          <div className="hidden md:flex items-center space-x-4 space-x-reverse gap-4">
+          <div className="hidden md:flex items-center gap-4">
             <button 
               onClick={toggleLang}
-              className="flex items-center justify-center min-w-[56px] text-[#172736] hover:text-[#817DFF] font-medium text-sm font-mono"
+              aria-label={languageAriaLabel}
+              className="flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-[#172736] hover:text-[#817DFF] hover:bg-gray-50 font-medium text-sm transition-colors"
             >
-              <Globe size={16} className="mx-1" />
-              <span>{lang === 'he' ? 'EN' : 'עב'}</span>
+              <Globe size={16} aria-hidden="true" />
+              <span>{languageLabel}</span>
             </button>
             <button 
               onClick={() => navigate(withLangPath('/contact'))}
@@ -60,15 +67,22 @@ export const Header = ({ lang, setLang, t, isScrolled, withLangPath }) => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center gap-4">
+          <div className="md:hidden flex items-center gap-3">
              <button 
               onClick={toggleLang}
-              className="text-[#172736] font-bold text-sm min-w-[48px]"
+              aria-label={languageAriaLabel}
+              className="flex items-center gap-1.5 px-2 py-1.5 rounded-lg text-[#172736] font-medium text-sm hover:bg-gray-50 transition-colors"
             >
-              {lang === 'he' ? 'EN' : 'HE'}
+              <Globe size={14} aria-hidden="true" />
+              <span>{languageLabel}</span>
             </button>
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-[#172736]">
-              {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            <button 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
+              className="text-[#172736] p-1"
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileMenuOpen}
+            >
+              {mobileMenuOpen ? <X size={28} aria-hidden="true" /> : <Menu size={28} aria-hidden="true" />}
             </button>
           </div>
         </div>
@@ -76,7 +90,10 @@ export const Header = ({ lang, setLang, t, isScrolled, withLangPath }) => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100 p-4 flex flex-col gap-4">
+        <nav 
+          className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100 p-4 flex flex-col gap-4"
+          aria-label="Mobile navigation"
+        >
           {navLinks.map(link => (
             <Link
               key={link.path}
@@ -96,7 +113,7 @@ export const Header = ({ lang, setLang, t, isScrolled, withLangPath }) => {
           >
             {t.nav.cta}
           </button>
-        </div>
+        </nav>
       )}
     </header>
   );

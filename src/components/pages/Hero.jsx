@@ -1,16 +1,18 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChevronRight, ChevronLeft } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Clock } from 'lucide-react';
 
 export const Hero = ({ t, lang, withLangPath }) => {
   const navigate = useNavigate();
   
   return (
     <section className="relative pt-32 pb-16 lg:pt-44 lg:pb-52 overflow-hidden">
-      {/* Background Image */}
+      {/* Background Image with lazy loading */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: 'url(/BackroundPicture.png)' }}
+        role="img"
+        aria-label={lang === 'he' ? 'רקע גרפי של בינה מלאכותית ועסקים' : 'AI and business concepts background graphic'}
       ></div>
       {/* Overlay for readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/85 to-[#FAFAFA]/95"></div>
@@ -26,20 +28,28 @@ export const Hero = ({ t, lang, withLangPath }) => {
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
             {t.hero.short_description}
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 pt-2">
-            <button 
-              onClick={() => navigate(withLangPath('/contact'))}
-              className="bg-[#817DFF] hover:bg-[#6c68e3] text-white text-lg px-7 py-4 rounded-xl font-bold shadow-lg shadow-purple-200 flex items-center justify-center gap-2 transform transition hover:scale-105"
-            >
-              {t.hero.cta_primary}
-              {lang === 'he' ? <ChevronLeft size={20} /> : <ChevronRight size={20} />}
-            </button>
-            <button 
-              onClick={() => navigate(withLangPath('/services'))}
-              className="bg-white hover:bg-gray-50 text-[#172736] border border-gray-200 hover:border-[#817DFF] text-lg px-7 py-4 rounded-xl font-bold transition flex items-center justify-center shadow-sm"
-            >
-              {t.hero.cta_secondary}
-            </button>
+          <div className="flex flex-col items-center gap-3 pt-2">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4">
+              <button 
+                onClick={() => navigate(withLangPath('/contact'))}
+                className="bg-[#817DFF] hover:bg-[#6c68e3] text-white text-lg px-7 py-4 rounded-xl font-bold shadow-lg shadow-purple-200 flex items-center justify-center gap-2 transform transition hover:scale-105"
+                aria-describedby="cta-micro-text"
+              >
+                {t.hero.cta_primary}
+                {lang === 'he' ? <ChevronLeft size={20} aria-hidden="true" /> : <ChevronRight size={20} aria-hidden="true" />}
+              </button>
+              <button 
+                onClick={() => navigate(withLangPath('/services'))}
+                className="bg-white hover:bg-gray-50 text-[#172736] border border-gray-200 hover:border-[#817DFF] text-lg px-7 py-4 rounded-xl font-bold transition flex items-center justify-center shadow-sm"
+              >
+                {t.hero.cta_secondary}
+              </button>
+            </div>
+            {/* Micro-copy explaining the CTA */}
+            <p id="cta-micro-text" className="text-sm text-gray-500 flex items-center gap-1.5">
+              <Clock size={14} aria-hidden="true" className="text-[#817DFF]" />
+              {t.hero.cta_micro}
+            </p>
           </div>
         </div>
       </div>

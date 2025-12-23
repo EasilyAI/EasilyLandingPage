@@ -5,7 +5,12 @@ export const Logo = ({ symbolOnly = false }) => {
     // Just the symbol (useful for mobile or compact views)
     return (
       <div className="flex items-center">
-        <img src="/symbol.png" alt="Easily AI" className="h-8 w-auto" />
+        <img 
+          src="/symbol.png" 
+          alt="Easily AI - AI Solutions for Business" 
+          className="h-8 w-auto"
+          loading="eager"
+        />
       </div>
     );
   }
@@ -14,8 +19,19 @@ export const Logo = ({ symbolOnly = false }) => {
   // Symbol always on the left, even in RTL
   return (
     <div className="flex items-center gap-3" dir="ltr">
-      <img src="/symbol.png" alt="" className="h-8 w-auto" />
-      <img src="/EASILYAI.png" alt="EASILY AI" className="h-6 w-auto" />
+      <img 
+        src="/symbol.png" 
+        alt="" 
+        aria-hidden="true"
+        className="h-8 w-auto"
+        loading="eager"
+      />
+      <img 
+        src="/EASILYAI.png" 
+        alt="Easily AI - AI Solutions for Business" 
+        className="h-6 w-auto"
+        loading="eager"
+      />
     </div>
   );
 };

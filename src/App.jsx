@@ -12,6 +12,7 @@ import { BlogPreview } from './components/pages/BlogPreview';
 import { BlogDetail } from './components/pages/BlogDetail';
 import { AITools } from './components/pages/AITools';
 import { Contact } from './components/pages/Contact';
+import { NotFound } from './components/pages/NotFound';
 import { content } from './content';
 import { SEO } from './components/layout/SEO';
 import { Analytics } from './components/layout/Analytics';
@@ -124,12 +125,13 @@ function AppContent() {
           <Route path="/blog/:id" element={<BlogDetailPage t={t} withLangPath={withLangPath} />} />
           <Route path="/contact" element={<ContactPage t={t} lang={lang} />} />
           <Route path="/ai-tools" element={<AIToolsPage t={t} />} />
+          <Route path="*" element={<NotFoundPage lang={lang} withLangPath={withLangPath} />} />
         </Routes>
       </main>
 
       {/* Side banner: Hebrew only, fixed under header on desktop */}
       <BannerAd lang={lang} />
-      <Footer t={t} withLangPath={withLangPath} />
+      <Footer t={t} withLangPath={withLangPath} lang={lang} />
     </div>
   );
 }
@@ -271,7 +273,7 @@ function ServiceDetailPage({ t, withLangPath }) {
 function AboutPage({ t, lang, withLangPath }) {
   return (
     <div className="pt-24">
-      <About t={t} withLangPath={withLangPath} />
+      <About t={t} withLangPath={withLangPath} lang={lang} />
     </div>
   );
 }
@@ -325,6 +327,15 @@ function AIToolsPage({ t }) {
   return (
     <div className="pt-16">
       <AITools t={t} />
+    </div>
+  );
+}
+
+// 404 Not Found Page Component
+function NotFoundPage({ lang, withLangPath }) {
+  return (
+    <div className="pt-16">
+      <NotFound lang={lang} withLangPath={withLangPath} />
     </div>
   );
 }
